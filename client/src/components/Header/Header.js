@@ -6,7 +6,7 @@ export default function Header() {
       <header>
         <h1>marsView</h1>
         <nav>
-          <ul>
+          {/* <ul>
             <li>
               <Link to={"/"}>Landing</Link>
             </li>
@@ -19,7 +19,7 @@ export default function Header() {
             <li>
               <Link to="/">RoverPics</Link>
             </li>
-          </ul>
+          </ul> */}
         </nav>
       </header>
     </div>
