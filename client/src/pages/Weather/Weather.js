@@ -1,4 +1,5 @@
 import React from "react";
+import "./Weather.css";
 
 import { Helmet } from "react-helmet-async";
 
@@ -10,9 +11,7 @@ export default function Weather() {
         <meta name="description" content="It's pretty fucking cold" />
         <link rel="canonical" href="/" />
       </Helmet>
-      <main>
-        <h2>Chilly bois</h2>
-      </main>
+      <h1>weatherView</h1>
     </>
   );
 }
