@@ -1,5 +1,6 @@
 import React from "react";
-// import image from "../../components/images/mars2-no-background";
+import Mars2 from "../../images/mars2.0.png";
+import "./Landing.css";
 
 import { Helmet } from "react-helmet-async";
 
@@ -15,7 +16,12 @@ export default function Landing() {
         <link rel="canonical" href="/" />
       </Helmet>
       <main>
-        <div className="hero">{/* <img src={image} alt="mars"></img> */}</div>
+        <div className="hero">
+          <img className="mars2" src={Mars2} alt="mars" />
+        </div>
+        <div className="welcome">
+          <h2>Welcome to Mars!</h2>
+        </div>
       </main>
     </div>
   );

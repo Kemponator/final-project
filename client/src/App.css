@@ -129,5 +129,6 @@ table {
 }
 
 * {
-  background-color: #28282b;
+  box-sizing: border-box;
+  background-color: black;
 }
