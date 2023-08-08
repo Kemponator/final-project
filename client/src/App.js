@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/about" element={<Forum />} />
-          <Route path="/contact" element={<RoverPics />} />
+          <Route path="/roverpics" element={<RoverPics />} />
           <Route path="/contact" element={<Weather />} />
         </Routes>
         <Footer />
