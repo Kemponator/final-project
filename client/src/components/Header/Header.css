@@ -9,7 +9,25 @@
   height: 50px;
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .navigation h1 {
+  animation: 1s ease-out 0s 1 slideInFromLeft, fadeIn ease-out 2s;
   position: absolute;
   text-align: left;
   font-family: "Space Mono", monospace;
@@ -20,6 +38,7 @@
 }
 
 .navigation ul {
+  max-width: 60%;
   display: flex;
   flex-wrap: wrap;
   float: right;
