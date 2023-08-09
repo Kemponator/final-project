@@ -31,7 +31,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              to="/Forum"
+              to="/forum"
               style={{ textDecoration: "none", color: "white" }}
             >
               Forum
@@ -39,7 +39,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              to="/Weather"
+              to="/weather"
               style={{ textDecoration: "none", color: "white" }}
             >
               Weather
@@ -47,7 +47,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              to="/RoverPics"
+              to="/roverpics"
               style={{ textDecoration: "none", color: "white" }}
             >
               RoverPics

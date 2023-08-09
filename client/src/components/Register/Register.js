@@ -1,31 +1,30 @@
-import "./Forum.css"
-
 import React, { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link, useNavigate } from "react-router-dom";
 
-
-export default function Forum() {
-  const [email, setEmail] = useState("");
+function Register() {
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    // React Router's useNavigate hook
-    const navigate = useNavigate();
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log({ email, password });
-        loginUser();
+        console.log({ username, email, password });
+        signUp();
         setEmail("");
+        setUsername("");
         setPassword("");
     };
 
-    const loginUser = () => {
-        fetch("http://localhost:4001/api/login", {
+    // React Router's useNavigate hook
+    const navigate = useNavigate();
+
+    const signUp = () => {
+        fetch("http://localhost:4001/api/register", {
             method: "POST",
             body: JSON.stringify({
                 email,
                 password,
+                username,
             }),
             headers: {
                 "Content-Type": "application/json",
@@ -33,31 +32,30 @@ export default function Forum() {
         })
             .then((res) => res.json())
             .then((data) => {
+                console.log(data);
                 if (data.error_message) {
                     alert(data.error_message);
                 } else {
-                    alert(data.message);
-                    navigate("/dashboard");
-                    localStorage.setItem("_id", data.id);
+                    alert("Account created successfully!");
+                    navigate("/forum");
                 }
             })
             .catch((err) => console.error(err));
     };
-
-
-  return (
-    <>
-      <Helmet>
-        <title>My Website Forum</title>
-        <meta
-          name="description"
-          content="This is the about page for my website yo yo"
-        />
-        <link rel="canonical" href="/" />
-      </Helmet>
-      <main className='login'>
-            <h1 className='loginTitle'>Log into your account</h1>
-            <form className='loginForm' onSubmit={handleSubmit}>
+    
+    return (
+        <main className='register'>
+            <h1 className='registerTitle'>Create an account</h1>
+            <form className='registerForm' onSubmit={handleSubmit}>
+                <label htmlFor='username'>Username</label>
+                <input
+                    type='text'
+                    name='username'
+                    id='username'
+                    required
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
                 <label htmlFor='email'>Email Address</label>
                 <input
                     type='text'
@@ -76,12 +74,13 @@ export default function Forum() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button className='loginBtn'>SIGN IN</button>
+                <button className='registerBtn'>REGISTER</button>
                 <p>
-                    Don't have an account? <Link to='/register'>Create one</Link>
+                    Have an account? <Link to='/forum'>Sign in</Link>
                 </p>
             </form>
-      </main>
-    </>
-  );
-}
+        </main>
+    );
+};
+
+export default Register;
