@@ -10,11 +10,11 @@ export default function Header() {
     console.log(location);
     if (location.pathname === "/") {
       setPageName("marsView");
-    } else if (location.pathname === "/Forum") {
+    } else if (location.pathname === "/forum") {
       setPageName("marsForum");
-    } else if (location.pathname === "/Weather") {
-      setPageName("weatherWatch");
-    } else if (location.pathname === "/RoverPics") {
+    } else if (location.pathname === "/weather") {
+      setPageName("todaysPic");
+    } else if (location.pathname === "/roverpics") {
       setPageName("roverWatch");
     }
   }, [location]);
@@ -26,7 +26,7 @@ export default function Header() {
         <ul>
           <li>
             <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
-              Home
+              home
             </Link>
           </li>
           <li>
@@ -34,7 +34,7 @@ export default function Header() {
               to="/forum"
               style={{ textDecoration: "none", color: "white" }}
             >
-              Forum
+              forum
             </Link>
           </li>
           <li>
@@ -42,7 +42,7 @@ export default function Header() {
               to="/weather"
               style={{ textDecoration: "none", color: "white" }}
             >
-              Weather
+              todaysPic
             </Link>
           </li>
           <li>
@@ -50,7 +50,7 @@ export default function Header() {
               to="/roverpics"
               style={{ textDecoration: "none", color: "white" }}
             >
-              RoverPics
+              roverPics
             </Link>
           </li>
         </ul>
