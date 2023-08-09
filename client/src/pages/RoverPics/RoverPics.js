@@ -11,7 +11,7 @@ export default function RoverPics() {
     chooseacamera: ""
 
   })
-  console.log(process.env.REACT_APP_NAME)
+  // console.log(process.env.REACT_APP_NAME)
   function searchFunction(event){
     setSearch({...search, [event.target.name]:event.target.value})
     
@@ -61,7 +61,7 @@ export default function RoverPics() {
               
           {/* {roverPhoto&&<img src={roverPhoto} alt="photo of mars taken by curiosity rover"/>} */}
           {roverPhoto && roverPhoto.map(photo=>{
-            return <img key={photo.id} src={photo.img_src} alt="mars" /> 
+            return <img key={photo.id} src={photo.img_src} alt="a photo of mars taken by a mars rover" /> 
           })}
         </div>
       </main>
