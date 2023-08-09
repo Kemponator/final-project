@@ -1,3 +1,5 @@
+import "./ForumHome.css"
+
 import React, { useEffect, useState } from "react";
 import Nav from "../Nav/Nav";
 import Likes from "../Likes/Likes";
@@ -51,7 +53,7 @@ function ForumHome() {
     
     return (
         <>
-            {/* <Nav /> */}
+            <Nav />
             <main className='home'>
                 <h2 className='homeTitle'>Create a Thread</h2>
                 <form className='homeForm' onSubmit={handleSubmit}>
