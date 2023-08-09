@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/about" element={<Forum />} />
           <Route path="/roverpics" element={<RoverPics />} />
-          <Route path="/contact" element={<Weather />} />
+          <Route path="/weather" element={<Weather />} />
         </Routes>
         <Footer />
       </div>
