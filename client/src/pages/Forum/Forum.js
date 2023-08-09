@@ -1,4 +1,5 @@
 import React from "react";
+import "../../pages/Forum/Forum.css";
 
 import { Helmet } from "react-helmet-async";
 

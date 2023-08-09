@@ -1,24 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 
 export default function Header() {
-  const url = window.location.href;
-  function getLastPart(url) {
-    const parts = url.split("/");
-    let pageName = "";
-    if (parts.at(-1) === "") {
-      pageName = "marsView";
-    } else {
-      pageName = parts.at(-1);
+  const location = useLocation();
+  const [pageName, setPageName] = useState("");
+
+  useEffect(() => {
+    console.log(location);
+    if (location.pathname === "/") {
+      setPageName("marsView");
+    } else if (location.pathname === "/Forum") {
+      setPageName("marsForum");
+    } else if (location.pathname === "/Weather") {
+      setPageName("weatherWatch");
+    } else if (location.pathname === "/RoverPics") {
+      setPageName("roverWatch");
     }
-    return pageName;
-  }
-  const headingOne = getLastPart(url);
+  }, [location]);
+
   return (
     <header>
       <nav className="navigation">
-        <h1>{headingOne}</h1>
+        <h1 key={pageName}>{pageName}</h1>
         <ul>
           <li>
             <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
