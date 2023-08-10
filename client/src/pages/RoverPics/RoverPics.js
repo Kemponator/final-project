@@ -40,6 +40,11 @@ export default function RoverPics() {
       </Helmet>
       <main>
         <h2>Images from the Cosmos</h2>
+        <p className="disclaimer">
+          Please note - not all days/cameras have images. Please try another
+          date/camera if nothing is returned! Sol date refers to the amount of
+          days the rover has been on mars. E.g. Sol 15 is the 15th day on Mars.
+        </p>
         <div className="roverSearchForm">
           <form className="form" onSubmit={getPhoto}>
             <label className="label1" htmlFor="soldate">
