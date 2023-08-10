@@ -21,11 +21,14 @@
   transform: scale(1.5) rotate(45deg);
 }
 
+.welcome {
+  margin-bottom: 30rem;
+}
+
 h2 {
   font-family: "Space Mono", monospace;
   color: white;
   font-size: 50px;
   display: flex;
   justify-content: center;
-  margin-bottom: 10rem;
 }

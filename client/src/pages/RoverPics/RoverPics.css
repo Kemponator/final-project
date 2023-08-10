@@ -3,8 +3,11 @@
   src: url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 }
 
-h2 {
+* {
   font-family: "Space Mono", monospace;
+}
+
+h2 {
   margin-top: 5rem;
 }
 
@@ -25,19 +28,19 @@ h2 {
   margin: 1rem 0;
 }
 
-/* .input1 {
-}
-
-.input2 {
-} */
-
 .button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 1rem;
+  margin: 1rem 0;
   max-width: 5rem;
   border-radius: 5px;
+}
+
+.resultsText {
+  max-width: 100%;
+  margin: 1rem 0 5rem 0;
+  font-style: italic;
 }
 
 .imageContainer {
@@ -53,4 +56,11 @@ h2 {
 
 .roverImage {
   max-width: 200px;
+}
+
+.disclaimer {
+  font-style: italic;
+  text-align: center;
+  margin: 0 15rem;
+  margin-bottom: 5rem;
 }
