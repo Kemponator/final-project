@@ -3,7 +3,42 @@
   src: url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 }
 
-h1 {
+* {
   font-family: "Space Mono", monospace;
+}
+
+h2 {
   color: white;
+  font-size: 50px;
+  margin: 5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formLabel {
+  padding: 1rem 0;
+}
+
+.formButton {
+  max-width: 5rem;
+  border-radius: 5px;
+}
+
+.photoOTDText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 15rem;
+}
+
+.photoOTD {
+  max-width: 800px;
+  margin: 5rem auto 10rem auto;
+  box-shadow: 5px 5px 10px 10px #b7b7b7;
+  display: flex;
+  flex-direction: row;
 }

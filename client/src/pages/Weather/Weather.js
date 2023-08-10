@@ -1,37 +1,34 @@
 import "./Weather.css";
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
-import axios from "axios"
+import axios from "axios";
 
 export default function Weather() {
-
-  const [selectedDate, setSelectedDate] = useState('');
-  const [reversedDate, setReversedDate] = useState('');
-  const [photoOTD, setPhotoOTD] = useState({})
+  const [selectedDate, setSelectedDate] = useState("");
+  const [reversedDate, setReversedDate] = useState("");
+  const [photoOTD, setPhotoOTD] = useState({});
 
   const handleDateChange = (event) => {
-    const newDate = event.target.value
+    const newDate = event.target.value;
     setSelectedDate(newDate);
-    const parts = newDate.split('')
-    console.log(parts)
-    const reversedParts = `${parts[0]}${parts[1]}${parts[2]}${parts[3]}${parts[4]}${parts[5]}${parts[6]}${parts[7]}${parts[8]}${parts[9]}`
-    console.log(reversedParts)
-    setReversedDate(reversedParts)
-    
+    const parts = newDate.split("");
+    console.log(parts);
+    const reversedParts = `${parts[0]}${parts[1]}${parts[2]}${parts[3]}${parts[4]}${parts[5]}${parts[6]}${parts[7]}${parts[8]}${parts[9]}`;
+    console.log(reversedParts);
+    setReversedDate(reversedParts);
   };
 
-
-  async function getPhoto(event){
+  async function getPhoto(event) {
     try {
       event.preventDefault();
-      console.log(reversedDate)
-      const API = `https://api.nasa.gov/planetary/apod?date=${reversedDate}&api_key=${process.env.REACT_APP_API_KEY}`
-      console.log(API)
-      const res = await axios.get(API)
+      console.log(reversedDate);
+      const API = `https://api.nasa.gov/planetary/apod?date=${reversedDate}&api_key=${process.env.REACT_APP_API_KEY}`;
+      console.log(API);
+      const res = await axios.get(API);
       setPhotoOTD(res.data);
-      console.log(res.data)
+      console.log(res.data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
   //   async function getRandomPhoto(){
@@ -44,7 +41,7 @@ export default function Weather() {
   //     } catch (error) {
   //       console.log(error)
   //     }
-    
+
   // }
   return (
     <>
@@ -54,19 +51,33 @@ export default function Weather() {
         <link rel="canonical" href="/" />
       </Helmet>
       <main>
-      <h1>weatherView</h1>
-      {console.log(photoOTD)}
-      <div className="photoOTDForm">
-        <form onSubmit={getPhoto}>
-          <label htmlFor="chooseADate">Choose a date:</label>
-          <input type="date" value={selectedDate} name="chooseADate" onChange={handleDateChange}/>
-          <button type="submit">Submit</button>
-        </form>
-        {/* <button onClick={getRandomPhoto}>Get a Random Photo!</button> */}
-        {<h2>{photoOTD.title}</h2>}
-        {photoOTD.explanation&&<p className="photoOTDText">{`"${photoOTD.explanation}"`} </p>}
-        {photoOTD.hdurl && <img className="photoOTD" src={photoOTD.hdurl} alt="NASA photo of the day" />}
-      </div>
+        <h2>Image of the Day</h2>
+        {console.log(photoOTD)}
+        <div className="">
+          <form className="form" onSubmit={getPhoto}>
+            <label className="formLabel" htmlFor="chooseADate">
+              Choose a date:
+            </label>
+            <input
+              className="formInput"
+              type="date"
+              value={selectedDate}
+              name="chooseADate"
+              onChange={handleDateChange}
+            />
+            <button className="formButton" type="submit">
+              Submit
+            </button>
+          </form>
+          {/* <button onClick={getRandomPhoto}>Get a Random Photo!</button> */}
+          {<h2>{photoOTD.title}</h2>}
+          {photoOTD.explanation && (
+            <p className="photoOTDText">{`"${photoOTD.explanation}"`} </p>
+          )}
+          {photoOTD.hdurl && (
+            <img className="photoOTD" src={photoOTD.hdurl} alt="NASA" />
+          )}
+        </div>
       </main>
     </>
   );
