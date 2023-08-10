@@ -35,6 +35,7 @@ function ForumHome() {
     const createThread = () => {
         fetch("http://localhost:4001/api/create/thread", {
             method: "POST",
+            mode: 'cors',
             body: JSON.stringify({
                 thread,
                 userId: localStorage.getItem("_id"),

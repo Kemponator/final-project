@@ -21,6 +21,7 @@ function Register() {
     const signUp = () => {
         fetch("http://localhost:4001/api/register", {
             method: "POST",
+            mode: 'cors',
             body: JSON.stringify({
                 email,
                 password,

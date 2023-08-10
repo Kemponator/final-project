@@ -23,6 +23,7 @@ export default function Forum() {
     const loginUser = () => {
         fetch("http://localhost:4001/api/login", {
             method: "POST",
+            mode: 'cors',
             body: JSON.stringify({
                 email,
                 password,
