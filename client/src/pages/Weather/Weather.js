@@ -31,20 +31,19 @@ export default function Weather() {
       console.log(error);
     }
   }
-  
-    async function getRandomPhoto(){
-      try {
-        const API = `https://api.nasa.gov/planetary/apod?count=1&api_key=${process.env.REACT_APP_API_KEY}`
-        console.log(API)
-        const res = await axios.get(API)
-        setPhotoOTD(res.data[0]);
-        console.log(res.data[0])
-      } catch (error) {
-        console.log(error)
-      }
-    
+
+  async function getRandomPhoto() {
+    try {
+      const API = `https://api.nasa.gov/planetary/apod?count=1&api_key=${process.env.REACT_APP_API_KEY}`;
+      console.log(API);
+      const res = await axios.get(API);
+      setPhotoOTD(res.data[0]);
+      console.log(res.data[0]);
+    } catch (error) {
+      console.log(error);
+    }
   }
-  
+
   return (
     <>
       <Helmet>
@@ -53,19 +52,7 @@ export default function Weather() {
         <link rel="canonical" href="/" />
       </Helmet>
       <main>
-      <h1>weatherView</h1>
-      {console.log(photoOTD)}
-      <div className="photoOTDForm">
-        <form onSubmit={getPhoto}>
-          <label htmlFor="chooseADate">Choose a date:</label>
-          <input type="date" value={selectedDate} name="chooseADate" onChange={handleDateChange}/>
-          <button type="submit">Submit</button>
-        </form>
-        <button onClick={getRandomPhoto}>Get a Random Photo!</button>
-        {<h2>{photoOTD.title}</h2>}
-        {photoOTD.explanation&&<p className="photoOTDText">{photoOTD.explanation} </p>}
-        {photoOTD.hdurl && <img className="photoOTD" src={photoOTD.hdurl} alt="NASA photo of the day" />}
-      </div>
+        {console.log(photoOTD)}
         <h2>Image of the Day</h2>
         {console.log(photoOTD)}
         <div className="">
@@ -84,7 +71,9 @@ export default function Weather() {
               Submit
             </button>
           </form>
-          {/* <button onClick={getRandomPhoto}>Get a Random Photo!</button> */}
+          <div className="randomPhotoButton">
+            <button onClick={getRandomPhoto}>Get a Random Photo!</button>
+          </div>
           {<h2>{photoOTD.title}</h2>}
           {photoOTD.explanation && (
             <p className="photoOTDText">{`"${photoOTD.explanation}"`} </p>
