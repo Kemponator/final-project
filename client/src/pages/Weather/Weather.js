@@ -34,18 +34,18 @@ export default function Weather() {
       console.log(error)
     }
   }
-  //   async function getRandomPhoto(){
-  //     try {
-  //       const API = `https://api.nasa.gov/planetary/apod?count=1&api_key=${process.env.REACT_APP_API_KEY}`
-  //       console.log(API)
-  //       const res = await axios.get(API)
-  //       setPhotoOTD(res.data);
-  //       console.log(res.data)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
+    async function getRandomPhoto(){
+      try {
+        const API = `https://api.nasa.gov/planetary/apod?count=1&api_key=${process.env.REACT_APP_API_KEY}`
+        console.log(API)
+        const res = await axios.get(API)
+        setPhotoOTD(res.data[0]);
+        console.log(res.data[0])
+      } catch (error) {
+        console.log(error)
+      }
     
-  // }
+  }
   return (
     <>
       <Helmet>
@@ -62,9 +62,9 @@ export default function Weather() {
           <input type="date" value={selectedDate} name="chooseADate" onChange={handleDateChange}/>
           <button type="submit">Submit</button>
         </form>
-        {/* <button onClick={getRandomPhoto}>Get a Random Photo!</button> */}
+        <button onClick={getRandomPhoto}>Get a Random Photo!</button>
         {<h2>{photoOTD.title}</h2>}
-        {photoOTD.explanation&&<p className="photoOTDText">{`"${photoOTD.explanation}"`} </p>}
+        {photoOTD.explanation&&<p className="photoOTDText">{photoOTD.explanation} </p>}
         {photoOTD.hdurl && <img className="photoOTD" src={photoOTD.hdurl} alt="NASA photo of the day" />}
       </div>
       </main>
