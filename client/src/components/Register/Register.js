@@ -17,7 +17,7 @@ function Register() {
 
   // React Router's useNavigate hook
   const navigate = useNavigate();
-
+  
   const signUp = () => {
     fetch("https://final-project-q72l.onrender.com/api/register", {
       method: "POST",
