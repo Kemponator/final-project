@@ -53,7 +53,7 @@ export default function Forum() {
         <link rel="canonical" href="/" />
       </Helmet>
       <main className="login">
-        <h1 className="loginTitle">Log into your account</h1>
+        <h1 className="loginTitle">Log in to your account</h1>
         <form className="loginForm" onSubmit={handleSubmit}>
           <label htmlFor="email">Email Address</label>
           <input
@@ -73,10 +73,13 @@ export default function Forum() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="loginBtn">SIGN IN</button>
-          <p>
-            Don't have an account? <Link to="/register">Create one</Link>
-          </p>
+
+          <div className="loginBtnCont">
+            <button className="loginBtn">Sign In</button>
+            <p className="loginText">
+              Don't have an account? <Link to="/register"><span className="createAccount">Create one here!</span></Link>
+            </p>
+          </div>
         </form>
       </main>
     </>

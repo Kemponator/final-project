@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Space Mono", monospace;
+	src: url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+}
+
 input {
 	padding: 10px 20px;
 	border: 1px solid #ddd;
@@ -51,6 +56,7 @@ a {
 }
 .homeForm {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	width: 80%;
@@ -94,6 +100,7 @@ a {
 .react__container {
 	display: flex;
 	align-items: center;
+	background-color: white;
 }
 .modal {
 	background-color: #ddd;
@@ -130,7 +137,9 @@ a {
 }
 .navbarRight {
 	display: flex;
-	align-items: center;
+	/* align-items: center; */
+	justify-content: right;
+	align-self: flex-end;
 }
 .navbarRight > button {
 	padding: 15px;
@@ -138,9 +147,177 @@ a {
 	background-color: #f99417;
 	color: #fffbf5;
 	font-size: 16px;
-	border: none;
+	border: 2px solid #f99417;
 	outline: none;
 	margin-left: 15px;
 	cursor: pointer;
-	border-radius: 3px;
+	border-radius: 0.5rem;
+	font-weight: 600;
+}
+
+.navbarRight > button:hover {
+	background-color: black;
+	border: 2px solid #f99417;
+	color: #f99417;
+}
+
+.home,
+.login,
+.register {
+	display: flex;
+	flex-direction: column;
+	justify-content: right;
+}
+
+.login,
+.register {
+	padding-top: 5rem;
+}
+
+.loginForm,
+.registerForm {
+	max-width: 25rem;
+}
+
+.loginForm > label,
+.registerForm > label {
+	margin-bottom: 0.5rem;
+}
+
+.loginForm > input,
+.registerForm > input {
+	color: black;
+	background-color: white;
+	border-radius: 0.5rem;
+}
+
+.loginBtnCont {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-items: center;
+}
+
+.thread__item {
+	background-color: white;
+	color: black;
+	border-radius: 0.5rem;
+}
+
+.thread__item > p {
+	background-color: white;
+	color: black;
+	font-weight: 600;
+}
+
+.likes__container > svg {
+	background-color: white;
+	color: black;
+}
+
+.likes__container > svg:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 50%;
+	color: black;
+}
+
+.likes__container {
+	background-color: white;
+}
+
+.home__container > input {
+	margin: 1rem 0;
+	background-color: white;
+	color: black;
+	border-radius: 0.5rem;
+}
+
+.homeBtn {
+	border: 2px solid white;
+	font-family: "Space Mono", monospace;
+	border-radius: 0.5rem;
+}
+
+.homeBtn:hover {
+	border-color: black;
+	color: black;
+	background: white;
+}
+
+
+.thread__item > h1 {
+	background-color: white;
+	color: black;
+	font-weight: 700;
+}
+
+.modal__content {
+	border-radius: 0.5rem;
+	margin: 0;
+	background-color: black;
+}
+
+
+.modal__content > label {
+	color: white;
+	background-color: black;
+	text-align: center;
+}
+
+.modal__content > textarea {
+	border: 2px solid black;
+	background-color: white;
+	color: black;
+	border-radius: 0.5rem;
+}
+
+.modalBtn {
+	border-radius: 0.5rem;
+	border: 2px solid white;
+}
+
+.modalBtn:hover {
+	background-color: white;
+	color: black;
+	border: 2px solid black;
+}
+
+.modalBtns {
+	background-color: black;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 0px;
+	margin: 0px;
+}
+
+.loginBtn,
+.registerBtn {
+	align-self: center;
+	border: 2px solid white;
+	border-radius: 0.5rem;
+}
+
+.loginBtn:hover,
+.registerBtn:hover {
+	border: 2px solid white;
+	background-color: white;
+	color: black;
+}
+
+.react__container > p {
+	background-color: white;
+	color: black;
+}
+
+.thread__item > p {
+	font-weight: normal;
+}
+
+.homeTitle {
+	margin-bottom: 3rem;
+}
+
+.thread__item > .thread__title {
+	font-weight: 700;
 }

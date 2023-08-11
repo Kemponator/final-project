@@ -67,12 +67,12 @@ export default function Weather() {
               name="chooseADate"
               onChange={handleDateChange}
             />
-            <button className="formButton" type="submit">
+            <button className="loginBtn" type="submit">
               Submit
             </button>
           </form>
           <div className="randomPhotoButton">
-            <button onClick={getRandomPhoto}>Get a Random Photo!</button>
+            <button className="loginBtn" onClick={getRandomPhoto}>Get a Random Photo!</button>
           </div>
           {<h2>{photoOTD.title}</h2>}
           {photoOTD.explanation && (

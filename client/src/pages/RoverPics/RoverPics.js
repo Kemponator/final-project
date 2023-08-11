@@ -39,11 +39,11 @@ export default function RoverPics() {
         <link rel="canonical" href="/" />
       </Helmet>
       <main>
-        <h2>Images from the Cosmos</h2>
+        <h2>Images from Mars</h2>
         <p className="disclaimer">
           Please note - not all days/cameras have images. Please try another
           date/camera if nothing is returned! Sol date refers to the amount of
-          days the rover has been on mars. E.g. Sol 15 is the 15th day on Mars.
+          days the rover has been on Mars. E.g. Sol 15 is the 15th day on Mars.
         </p>
         <div className="roverSearchForm">
           <form className="form" onSubmit={getPhoto}>
@@ -78,7 +78,7 @@ export default function RoverPics() {
               </option>
               <option value="Mars Descent Imager">Mars Descent Imager</option>
             </select>
-            <button className="button" type="submit">
+            <button className="loginBtn" type="submit">
               Search
             </button>
           </form>

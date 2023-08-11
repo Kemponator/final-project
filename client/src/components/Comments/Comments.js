@@ -13,7 +13,7 @@ const Comments = ({ numberOfComments, threadId }) => {
             <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 24 24'
-                fill='currentColor'
+                fill='black'
                 className='w-6 h-6 likesBtn'
                 onClick={handleAddComment}
             >
@@ -23,7 +23,7 @@ const Comments = ({ numberOfComments, threadId }) => {
                     clipRule='evenodd'
                 />
             </svg>
-            <p style={{ color: "#434242" }}>
+            <p style={{ color: "black", backgroundColor: "white" }}>
                 {numberOfComments === 0 ? "" : numberOfComments}
             </p>
         </div>

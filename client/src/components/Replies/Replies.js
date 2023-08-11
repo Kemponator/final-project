@@ -56,10 +56,15 @@ function Replies() {
     setReply("");
   };
 
+  const goBack = () => {
+    navigate("/dashboard");
+  }
+
   return (
     <main className="replies">
-      <h1 className="repliesTitle">{title}</h1>
-
+      <div className="thread__item">
+        <h1>{title}</h1>
+      </div>
       <form className="modal__content" onSubmit={handleSubmitReply}>
         <label htmlFor="reply">Reply to the thread</label>
         <textarea
@@ -70,8 +75,10 @@ function Replies() {
           name="reply"
           className="modalInput"
         />
-
-        <button className="modalBtn">SEND</button>
+        <div className="modalBtns">
+          <button className="modalBtn">Send</button>
+          <button className="modalBtn back" onClick={goBack}>Go back</button>
+        </div>
       </form>
 
       <div className="thread__container">

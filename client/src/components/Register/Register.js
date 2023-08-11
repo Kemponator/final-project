@@ -74,9 +74,9 @@ function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="registerBtn">REGISTER</button>
-        <p>
-          Have an account? <Link to="/forum">Sign in</Link>
+        <button className="registerBtn">Register</button>
+        <p className="loginText">
+          Have an account? <Link to="/forum"><span className="createAccount">Sign in here!</span></Link>
         </p>
       </form>
     </main>

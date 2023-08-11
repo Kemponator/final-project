@@ -1,7 +1,7 @@
 import "./ForumHome.css";
 
 import React, { useEffect, useState } from "react";
-import Nav from "../Nav/Nav";
+// import Nav from "../Nav/Nav";
 import Likes from "../Likes/Likes";
 import Comments from "../Comments/Comments";
 import { useNavigate } from "react-router-dom";
@@ -51,11 +51,20 @@ function ForumHome() {
       .catch((err) => console.error(err));
   };
 
+  const signOut = () => {
+      localStorage.removeItem("_id");
+      // redirects to the login page
+      navigate("/forum");
+  };
+
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <main className="home">
-        <h2 className="homeTitle">Create a Thread</h2>
+        <div className='navbarRight'>
+            <button onClick={signOut}>Sign out</button>
+        </div>
+        <h2 className="homeTitle">Welcome to marsForum</h2>
         <form className="homeForm" onSubmit={handleSubmit}>
           <div className="home__container">
             <label htmlFor="thread">Title / Description</label>
@@ -67,13 +76,13 @@ function ForumHome() {
               onChange={(e) => setThread(e.target.value)}
             />
           </div>
-          <button className="homeBtn">CREATE THREAD</button>
+          <button className="homeBtn">Create a Thread</button>
         </form>
 
         <div className="thread__container">
           {threadList.map((thread) => (
             <div className="thread__item" key={thread.id}>
-              <p>{thread.title}</p>
+              <p className="thread__title">{thread.title}</p>
               <div className="react__container">
                 <Likes
                   numberOfLikes={thread.likes.length}
